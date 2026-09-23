@@ -1,0 +1,80 @@
+@charset "utf-8";
+body{
+    background-color: #fffafa;
+    /*背景いい色見つからなかった*/
+    background-image: 
+        linear-gradient(45deg, #e8e2d5 25%, transparent 25%), 
+        linear-gradient(-45deg, #e8e2d5 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #e8e2d5 75%), 
+        linear-gradient(-45deg, transparent 75%, #e8e2d5 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    /*市松柄はAIに作ってもらった*/
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+footer{
+    background-color: #4682b4;
+    color: #ffff;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+.center{
+    text-align: center;
+}
+.links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1100px;
+    /*maxwidthのpx数えるのがめんどくさかったので大体です*/
+    margin: 0 auto;
+    /*flex: 1;*/
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #f8f9fa;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    transition: 0.3s;
+    /*いろいろ試したけど0.3がいいね*/
+}
+.card:hover{
+    background-color: #f1f3f5;
+    border-color: #adb5bd;
+    transform: translateY(3px);
+}
+.card img{
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.card a{
+    text-decoration: none;
+    color: #4169e1;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.footer{
+    color: #ffff;
+}
+/*cssの感想としてはfooterが大変だった。
+幅を画面ピッタリに合わせるのにwidth100vwだけだと親の枠のうち側までで難航した。
+そこでとあるサイトでleftで左端を移動させてもとに戻すことで親の概念を無視できる方法を見つけて解決した。
+配置の仕様には何を基準としているかというものへの理解が必要とされた気がした。
+また配列系では競合や組合わせが予想しづらいと感じた。
+marginとpaddingの使い分けはムズイ。
+他にはcardを4,3で並べたいときにflexwrapで折り返すようにしてからmaxwidthで制限かけて強制的に折り返すアイデアは我ながら天才だなと感じた。
+あとはflexboxがめちゃめちゃありがたい。が、まだまだ理解が浅いのでもっと勉強したい。*/

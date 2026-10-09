@@ -1,0 +1,12 @@
+div {color:rgb(0, 0, 0)}
+body {
+  background-image: url("それでも.jpg");
+}
+.main {
+background-color: white;
+width: 60%;
+min-height: 100vh;
+margin: 0 auto;
+padding: 20px;
+text-align: center;
+}
